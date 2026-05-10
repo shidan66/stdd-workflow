@@ -2,7 +2,7 @@
 description: 提案初始化 - 生成符合 OpenSpec 规范的 proposal.md，触发 brainstorming 明确需求提案
 ---
 
-# WF: 提案初始化
+# STDD: 提案初始化
 
 ## 目标
 
@@ -66,4 +66,4 @@ description: 提案初始化 - 生成符合 OpenSpec 规范的 proposal.md，触
 告诉用户：
 - 创建的 change 目录路径
 - proposal.md 已生成完整内容
-- 下一步是 `/wf:clarify` 进行需求规范明确
+- 下一步是 `/stdd:spec` 进行需求规范明确

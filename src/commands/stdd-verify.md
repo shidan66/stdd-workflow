@@ -2,7 +2,7 @@
 description: 审查验证阶段 - 触发 verification 技能，执行 OpenSpec verify + TDD 验证 + 覆盖率检查
 ---
 
-# WF: 审查验证
+# STDD: 审查验证
 
 ## 目标
 
@@ -10,7 +10,7 @@ description: 审查验证阶段 - 触发 verification 技能，执行 OpenSpec v
 
 ## 前提
 
-- 已完成 `/wf:apply` 阶段
+- 已完成 `/stdd:apply` 阶段
 - 代码和测试已生成
 
 ## 执行步骤
@@ -48,4 +48,4 @@ description: 审查验证阶段 - 触发 verification 技能，执行 OpenSpec v
 ## 输出
 
 - verify.md（验证报告）
-- 告诉用户可以进入 `/wf:archive` 阶段
+- 告诉用户可以进入 `/stdd:archive` 阶段

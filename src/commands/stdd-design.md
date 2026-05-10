@@ -2,7 +2,7 @@
 description: 设计阶段 - 触发 brainstorming 技能，基于 proposal 和 spec.md 进行方案设计
 ---
 
-# WF: 需求设计
+# STDD: 需求设计
 
 ## 目标
 
@@ -10,7 +10,7 @@ description: 设计阶段 - 触发 brainstorming 技能，基于 proposal 和 sp
 
 ## 前提
 
-- 已完成 `/wf:clarify` 阶段
+- 已完成 `/stdd:spec` 阶段
 - proposal.md 包含完整提案
 - spec.md 包含需求规格
 - brainstorm.md 包含阶段2的问答记录
@@ -45,4 +45,4 @@ description: 设计阶段 - 触发 brainstorming 技能，基于 proposal 和 sp
 
 - design.md（完整设计方案）
 - 更新的 brainstorm.md（包含阶段3的问答记录）
-- 告诉用户可以进入 `/wf:split` 阶段
+- 告诉用户可以进入 `/stdd:tasks` 阶段

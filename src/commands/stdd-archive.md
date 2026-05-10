@@ -2,7 +2,7 @@
 description: 归档阶段 - 关联 OpenSpec archive，合并 spec 并归档全部制品
 ---
 
-# WF: 归档
+# STDD: 归档
 
 ## 目标
 
@@ -10,7 +10,7 @@ description: 归档阶段 - 关联 OpenSpec archive，合并 spec 并归档全�
 
 ## 前提
 
-- 已完成 `/wf:verify` 阶段
+- 已完成 `/stdd:verify` 阶段
 - 所有验证通过
 
 ## 执行步骤

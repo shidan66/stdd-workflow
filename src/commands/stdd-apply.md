@@ -2,7 +2,7 @@
 description: 编码实现阶段 - 触发 tdd 技能，按 plan 顺序连续执行，产出代码和测试
 ---
 
-# WF: 编码实现
+# STDD: 编码实现
 
 ## 目标
 
@@ -10,7 +10,7 @@ description: 编码实现阶段 - 触发 tdd 技能，按 plan 顺序连续执�
 
 ## 前提
 
-- 已完成 `/wf:plan` 阶段
+- 已完成 `/stdd:plan` 阶段
 - plan.md 包含执行计划
 
 ## 执行步骤
@@ -39,4 +39,4 @@ description: 编码实现阶段 - 触发 tdd 技能，按 plan 顺序连续执�
 - 代码文件（实现代码）
 - 测试文件（测试用例）
 - 更新的 tasks.md（标记完成的任务）
-- 告诉用户可以进入 `/wf:verify` 阶段
+- 告诉用户可以进入 `/stdd:verify` 阶段

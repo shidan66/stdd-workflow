@@ -1,4 +1,4 @@
-# WF Workflow
+# STDD Workflow
 
 整合 OpenSpec 与 Superpowers，构建适合中大型项目开发的端到端研发工作流。
 
@@ -7,7 +7,7 @@
 将以下指令复制到 OpenCode 中执行：
 
 ```
-请帮我安装 WF Workflow 工作流包：
+请帮我安装 STDD Workflow 工作流包：
 
 1. 检查 OpenSpec 是否已安装（运行 openspec --version），如果没有则安装：npm install -g @fission-ai/openspec@latest
 
@@ -23,20 +23,20 @@
 
 | 命令 | 说明 | 产出 |
 |------|------|------|
-| `/wf:status` | 状态查看 | - |
-| `/wf:propose` | 提案初始化 | proposal.md |
-| `/wf:spec` | 需求规范 | spec.md |
-| `/wf:design` | 需求设计 | design.md |
-| `/wf:tasks` | 任务拆分 | tasks.md |
-| `/wf:plan` | 执行计划 | plan.md |
-| `/wf:apply` | 编码实现 | 代码 |
-| `/wf:verify` | 审查验证 | verify.md |
-| `/wf:archive` | 归档 | archive/ |
+| `/stdd:status` | 状态查看 | - |
+| `/stdd:propose` | 提案初始化 | proposal.md |
+| `/stdd:spec` | 需求规范 | spec.md |
+| `/stdd:design` | 需求设计 | design.md |
+| `/stdd:tasks` | 任务拆分 | tasks.md |
+| `/stdd:plan` | 执行计划 | plan.md |
+| `/stdd:apply` | 编码实现 | 代码 |
+| `/stdd:verify` | 审查验证 | verify.md |
+| `/stdd:archive` | 归档 | archive/ |
 
 ## 工作流阶段
 
 ```
-wf:propose → wf:spec → wf:design → wf:tasks → wf:plan → wf:apply → wf:verify → wf:archive
+stdd:propose → stdd:spec → stdd:design → stdd:tasks → stdd:plan → stdd:apply → stdd:verify → stdd:archive
 ```
 
 ## 制品结构

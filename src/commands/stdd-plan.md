@@ -2,7 +2,7 @@
 description: 执行计划阶段 - 触发 writing-plans 技能，分析 tasks.md，产出执行计划
 ---
 
-# WF: 执行计划
+# STDD: 执行计划
 
 ## 目标
 
@@ -10,7 +10,7 @@ description: 执行计划阶段 - 触发 writing-plans 技能，分析 tasks.md�
 
 ## 前提
 
-- 已完成 `/wf:split` 阶段
+- 已完成 `/stdd:tasks` 阶段
 - tasks.md 包含原子任务清单
 
 ## 执行步骤
@@ -58,4 +58,4 @@ description: 执行计划阶段 - 触发 writing-plans 技能，分析 tasks.md�
 ## 输出
 
 - plan.md（执行计划）
-- 告诉用户可以进入 `/wf:apply` 阶段
+- 告诉用户可以进入 `/stdd:apply` 阶段

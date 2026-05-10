@@ -2,7 +2,7 @@
 description: 任务拆分阶段 - 基于 proposal、design、brainstorm 进行原子任务拆分
 ---
 
-# WF: 任务拆分
+# STDD: 任务拆分
 
 ## 目标
 
@@ -10,7 +10,7 @@ description: 任务拆分阶段 - 基于 proposal、design、brainstorm 进行�
 
 ## 前提
 
-- 已完成 `/wf:design` 阶段
+- 已完成 `/stdd:design` 阶段
 - proposal.md 包含详细需求
 - design.md 包含技术方案
 - brainstorm.md 包含完整问答记录
@@ -39,4 +39,4 @@ description: 任务拆分阶段 - 基于 proposal、design、brainstorm 进行�
 ## 输出
 
 - tasks.md（原子任务清单）
-- 告诉用户可以进入 `/wf:plan` 阶段
+- 告诉用户可以进入 `/stdd:plan` 阶段

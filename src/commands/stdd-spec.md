@@ -2,7 +2,7 @@
 description: 需求规范 - 触发 brainstorming 技能，明确需求规格，生成 spec.md
 ---
 
-# WF: 需求规范
+# STDD: 需求规范
 
 ## 目标
 
@@ -10,7 +10,7 @@ description: 需求规范 - 触发 brainstorming 技能，明确需求规格，�
 
 ## 前提
 
-- 已完成 `/wf:init` 阶段
+- 已完成 `/stdd:propose` 阶段
 - proposal.md 包含完整的提案内容
 
 ## 执行步骤
@@ -48,4 +48,4 @@ description: 需求规范 - 触发 brainstorming 技能，明确需求规格，�
 
 - specs/<capability>/spec.md（需求规格）
 - 更新的 brainstorm.md（包含阶段2的问答记录）
-- 告诉用户可以进入 `/wf:design` 阶段
+- 告诉用户可以进入 `/stdd:design` 阶段
