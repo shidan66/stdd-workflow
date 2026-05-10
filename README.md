@@ -7,7 +7,6 @@
 将以下指令复制到 OpenCode 中执行：
 
 ```
-请帮我安装 STDD Workflow 工作流包：
 Fetch and follow instructions from https://github.com/shidan66/stdd-workflow/blob/main/INSTALL.md
 ```
 
