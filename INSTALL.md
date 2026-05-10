@@ -1,5 +1,7 @@
 # 安装指南
 
+按照下面安装步骤进行安装；
+
 ## 安装步骤详解
 
 ### 1. 安装 OpenSpec
@@ -29,11 +31,3 @@ https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INS
 ```bash
 cp -r stdd-workflow/src/commands/* .opencode/commands/
 ```
-
-## 验证安装
-
-安装完成后，可以在 OpenCode 中输入以下命令验证：
-- `/stdd:status` - 查看工作流状态
-- `/stdd:propose` - 开始新提案
-
-如果命令可用了，说明安装成功。
