@@ -31,3 +31,24 @@ https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INS
 ```bash
 cp -r stdd-workflow/src/commands/* .opencode/commands/
 ```
+
+### 4. 复制模板文件
+
+将本项目的模板文件复制到项目中的 `stdd-templates/` 目录。
+
+- 如果原项目中已有对应名字的模板文件，则忽略复制
+- 如果原项目模板目录中没有对应名字的模板文件，则进行复制
+
+复制命令：
+```bash
+# 创建目标项目的模板目录（如果不存在）
+mkdir -p stdd-templates
+
+# 复制模板文件（同名文件会被跳过）
+for file in stdd-workflow/stdd-templates/*; do
+  filename=$(basename "$file")
+  if [ ! -f "stdd-templates/$filename" ]; then
+    cp "$file" stdd-templates/
+  fi
+done
+```
