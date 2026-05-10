@@ -1,20 +1,5 @@
 # 安装指南
 
-将以下指令复制到 OpenCode 中执行：
-
-```
-请帮我安装 STDD Workflow 工作流包：
-
-1. 检查 OpenSpec 是否已安装（运行 openspec --version），如果没有则安装：npm install -g @fission-ai/openspec@latest
-
-2. 检查 OpenCode 配置（~/.config/opencode/opencode.json）中是否已配置 Superpowers，如果没有则按照官方文档安装：
-   Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
-
-3. 复制 src/commands/ 目录下的所有 .md 文件到 .opencode/commands/ 目录
-
-完成后告诉我安装结果。
-```
-
 ## 安装步骤详解
 
 ### 1. 安装 OpenSpec
