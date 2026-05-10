@@ -1,27 +1,27 @@
-## Context
+## 背景 (Context)
 
-<!-- Background and current state -->
+<!-- 背景和当前状态 -->
 
-## Goals / Non-Goals
+## 目标 / 非目标 (Goals / Non-Goals)
 
-**Goals:**
-<!-- What this design aims to achieve -->
+**目标：**
+<!-- 本设计要实现的目标 -->
 
-**Non-Goals:**
-<!-- What is explicitly out of scope -->
+**非目标：**
+<!-- 明确排除的范围 -->
 
-## Decisions
+## 决策 (Decisions)
 
-<!-- Key design decisions and rationale -->
+<!-- 关键设计决策及其理由 -->
 
-## Risks / Trade-offs
+## 风险 / 权衡 (Risks / Trade-offs)
 
-<!-- Known risks and trade-offs -->
+<!-- 已知的风险和权衡 -->
 
-## Migration Plan
+## 迁移计划 (Migration Plan)
 
-<!-- Steps to deploy, rollback strategy -->
+<!-- 部署步骤、回滚策略 -->
 
-## Open Questions
+## 开放问题 (Open Questions)
 
-<!-- Outstanding decisions or unknowns to resolve -->
+<!-- 待解决的决策或未知问题 -->

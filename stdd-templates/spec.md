@@ -1,8 +1,8 @@
-## ADDED Requirements
+## 新增需求 (ADDED Requirements)
 
-### Requirement: <!-- requirement name -->
-<!-- requirement text -->
+### 需求: <!-- 需求名称 -->
+<!-- 需求描述 -->
 
-#### Scenario: <!-- scenario name -->
-- **WHEN** <!-- condition -->
-- **THEN** <!-- expected outcome -->
+#### 场景: <!-- 场景名称 -->
+- **当** <!-- 条件：当... -->
+- **则** <!-- 预期结果：那么... -->
