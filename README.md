@@ -21,32 +21,40 @@
 
 ## 工作流命令
 
-| 命令 | 说明 |
-|------|------|
-| `/wf:init` | 提案初始化 - 创建空的 proposal.md |
-| `/wf:clarify` | 需求明确 - 触发 brainstorming 技能 |
-| `/wf:design` | 设计 - 触发 brainstorming 技能 |
-| `/wf:split` | 任务拆分 - 产出 tasks.md |
-| `/wf:plan` | 执行计划 - 触发 writing-plans 技能 |
-| `/wf:apply` | 编码实现 - 触发 tdd 技能 |
-| `/wf:verify` | 审查验证 - 触发 verification 技能 |
-| `/wf:archive` | 归档 - 关联 OpenSpec archive |
+| 命令 | 说明 | 产出 |
+|------|------|------|
+| `/wf:status` | 状态查看 | - |
+| `/wf:propose` | 提案初始化 | proposal.md |
+| `/wf:spec` | 需求规范 | spec.md |
+| `/wf:design` | 需求设计 | design.md |
+| `/wf:tasks` | 任务拆分 | tasks.md |
+| `/wf:plan` | 执行计划 | plan.md |
+| `/wf:apply` | 编码实现 | 代码 |
+| `/wf:verify` | 审查验证 | verify.md |
+| `/wf:archive` | 归档 | archive/ |
 
 ## 工作流阶段
 
 ```
-wf:init → wf:clarify → wf:design → wf:split → wf:plan → wf:apply → wf:verify → wf:archive
+wf:propose → wf:spec → wf:design → wf:tasks → wf:plan → wf:apply → wf:verify → wf:archive
 ```
 
 ## 制品结构
 
 ```
 openspec/changes/<feature>/
-├── proposal.md      (需求提案)
-├── brainstorm.md   (问答记录，按阶段分类)
-├── design.md        (设计方案)
-├── tasks.md         (原子任务清单)
-└── plan.md          (执行计划)
+├── proposal.md           (需求提案，符合 OpenSpec 规范)
+├── specs/
+│   └── <capability>/
+│       └── spec.md       (需求规格，delta spec)
+├── brainstorm.md        (问答记录，3个阶段)
+│   ├── 阶段1: 需求提案
+│   ├── 阶段2: 需求规范
+│   └── 阶段3: 需求设计
+├── design.md             (设计方案)
+├── tasks.md             (原子任务清单)
+├── plan.md              (执行计划)
+└── verify.md            (验证报告)
 ```
 
 ## 依赖

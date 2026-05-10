@@ -28,7 +28,7 @@ description: 审查验证阶段 - 触发 verification 技能，执行 OpenSpec v
 
 4. **覆盖率检查**：运行测试覆盖率工具（如有），报告覆盖率
 
-5. **生成验证报告**：写入 verify-report.md：
+5. **生成验证报告**：写入 verify.md：
 ```markdown
 # 验证报告
 
@@ -47,5 +47,5 @@ description: 审查验证阶段 - 触发 verification 技能，执行 OpenSpec v
 
 ## 输出
 
-- verify-report.md（验证报告）
+- verify.md（验证报告）
 - 告诉用户可以进入 `/wf:archive` 阶段
