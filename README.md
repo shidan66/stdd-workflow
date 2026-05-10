@@ -57,11 +57,41 @@ openspec/changes/<feature>/
 └── verify.md            (验证报告)
 ```
 
+## 自定义模板
+
+支持在项目目录下创建 `stdd-templates/` 目录自定义各阶段的文件格式。
+
+### 目录结构
+
+```
+项目目录/
+└── stdd-templates/          (可选)
+    ├── proposal.md          (可选)
+    ├── spec.md             (可选)
+    ├── design.md           (可选)
+    ├── tasks.md            (可选)
+    ├── brainstorm.md       (可选)
+    ├── plan.md             (可选)
+    └── verify.md           (可选)
+```
+
+### 优先级规则
+
+| 文件 | 优先级 |
+|------|--------|
+| proposal.md | 项目模板 > OpenSpec 默认 |
+| spec.md | 项目模板 > OpenSpec 默认 |
+| design.md | 项目模板 > OpenSpec 默认 |
+| tasks.md | 项目模板 > OpenSpec 默认 |
+| brainstorm.md | 项目模板 > STDD 默认 |
+| plan.md | 项目模板 > STDD 默认 |
+| verify.md | 项目模板 > STDD 默认 |
+
+如果项目目录下没有对应的模板文件，则使用默认格式生成。
+
 ## 依赖
 
 - **OpenSpec** - 规范框架
 - **Superpowers** - 执行纪律（TDD、调试、审查等技能）
 
 ## 文档
-
-- [设计文档](./docs/design.md) - 完整的设计方案
