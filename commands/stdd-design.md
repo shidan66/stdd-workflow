@@ -21,6 +21,7 @@ description: 设计阶段 - 触发 brainstorming 技能，基于 proposal 和 sp
    - 读取 proposal.md（需求提案）
    - 读取 spec.md（需求规格）
    - 分析现有代码库结构
+   - 读取 brainstorm.md文件
 
 2. **检查自定义模板**：检查项目目录下是否存在 `openspec/schemas/stdd/templates/design.md`
    - 如果存在，加载自定义模板
