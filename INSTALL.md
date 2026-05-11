@@ -23,24 +23,22 @@ openspec --version
 如果没有，按照官方文档安装：
 https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
 
-### 3. 复制命令文件
+### 3. 下载代码仓库文件
+使用git将 `https://github.com/shidan66/stdd-workflow.git` 下载到一个临时目录，路径记为`$STDD_HOME`；
 
-将 `commands/` 目录下的所有 `.md` 文件复制到项目中 `.opencode/commands/` 目录下。
+**复制命令文件**
 
-复制命令：
-```bash
-cp -r stdd-workflow/src/commands/* .opencode/commands/
-```
+将`$STDD_HOME/commands/`下面所有的.md文件复制到当前项目的`.opencode/commands/` 目录下，如果当前项目下没有`.opencode/commands/`则先创建目录再下载。
 
-### 4. 复制模板文件
+**复制模板文件**
 
-将本项目的`schemas/`目录下面的子目录和文件复制到项目中的 `openspec/schemas/` 目录下。
-- 如果原项目中已有对应名字的模板文件，则忽略复制
-- 如果原项目模板目录中没有对应名字的模板文件，则进行复制
+将`$STDD_HOME/schemas/`目录下面的子目录和文件复制到项目中的 `openspec/schemas/` 目录下。
+**清理$STDD_HOME目录**
+删除$STDD_HOME目录及其下面的所有子目录和文件
 
-### 5. 修改项目中openspec文件，将stdd作为默认schema
+### 4. 修改项目中openspec文件，将stdd作为默认schema
 
 修改当前项目中`openspec/config.yaml`，将schema改为stdd
 
-### 6. 提醒用户退出后重新进入opencode
+### 5. 提醒用户退出后重新进入opencode
 使用中文提醒用户退出后重新进入opencode

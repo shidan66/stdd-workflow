@@ -55,7 +55,7 @@ openspec/changes/<feature>/
 ### 目录结构
 
 ```
-项目目录/openspec/
+项目目录/openspec/schemas/
 └── stdd/
     └──config.yaml
     └──template                 (可选)
