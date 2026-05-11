@@ -25,7 +25,7 @@ https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INS
 
 ### 3. 复制命令文件
 
-将 `src/commands/` 目录下的所有 `.md` 文件复制到项目中 `.opencode/commands/` 目录下。
+将 `commands/` 目录下的所有 `.md` 文件复制到项目中 `.opencode/commands/` 目录下。
 
 复制命令：
 ```bash
