@@ -37,3 +37,9 @@ cp -r stdd-workflow/src/commands/* .opencode/commands/
 将本项目的`template/`下的`stdd`目录及其下面的文件复制到项目中的 `openspec/schema/` 目录下。
 - 如果原项目中已有对应名字的模板文件，则忽略复制
 - 如果原项目模板目录中没有对应名字的模板文件，则进行复制
+
+### 5. 修改项目中openspec文件，将stdd作为默认schema
+
+修改当前项目中`openspec/config.yaml`，将schema改为stdd
+
+### 6. 提醒用户退出后重新进入opencode
