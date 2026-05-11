@@ -18,31 +18,31 @@ description: 查看当前工作流状态，检测执行阶段，支持从中断�
 | 阶段 | 检测依据 |
 |------|----------|
 | 未开始 | 不存在 proposal.md |
-| stdd:propose | proposal.md 有完整内容，brainstorm.md 阶段1有内容 |
-| stdd:spec | spec.md 存在，brainstorm.md 阶段2有内容 |
-| stdd:design | design.md 有内容，brainstorm.md 阶段3有内容 |
-| stdd:tasks | tasks.md 有内容 |
-| stdd:plan | plan.md 有内容 |
-| stdd:apply | tasks.md 有已完成标记 [x] |
-| stdd:verify | verify.md 存在 |
-| stdd:archive | change 目录已在 archive 中 |
+| stdd-propose | proposal.md 有完整内容，brainstorm.md 阶段1有内容 |
+| stdd-spec | spec.md 存在，brainstorm.md 阶段2有内容 |
+| stdd-design | design.md 有内容，brainstorm.md 阶段3有内容 |
+| stdd-tasks | tasks.md 有内容 |
+| stdd-plan | plan.md 有内容 |
+| stdd-apply | tasks.md 有已完成标记 [x] |
+| stdd-verify | verify.md 存在 |
+| stdd-archive | change 目录已在 archive 中 |
 
 ### 2. 显示状态
 
 输出当前阶段信息：
 ```
-当前阶段: stdd:spec (需求规范)
+当前阶段: stdd-spec (需求规范)
 
 已完成:
-- stdd:propose ✓ (需求提案)
+- stdd-propose ✓ (需求提案)
 
 待完成:
-- stdd:design
-- stdd:tasks
-- stdd:plan
-- stdd:apply
-- stdd:verify
-- stdd:archive
+- stdd-design
+- stdd-tasks
+- stdd-plan
+- stdd-apply
+- stdd-verify
+- stdd-archive
 ```
 
 ### 3. 恢复继续（如果有请求）

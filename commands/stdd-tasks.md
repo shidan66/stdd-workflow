@@ -10,7 +10,7 @@ description: 任务拆分阶段 - 基于 proposal、design、brainstorm 进行�
 
 ## 前提
 
-- 已完成 `/stdd:design` 阶段
+- 已完成 `/stdd-design` 阶段
 - proposal.md 包含详细需求
 - design.md 包含技术方案
 - brainstorm.md 包含完整问答记录
@@ -22,7 +22,7 @@ description: 任务拆分阶段 - 基于 proposal、design、brainstorm 进行�
    - 读取 design.md
    - 读取 brainstorm.md
 
-2. **检查自定义模板**：检查项目目录下是否存在 `stdd-templates/tasks.md`
+2. **检查自定义模板**：检查项目目录下是否存在 `openspec/schemas/stdd/templates/tasks.md`
    - 如果存在，加载自定义模板
    - 如果不存在，使用 OpenSpec 默认模板
 
@@ -50,4 +50,4 @@ description: 任务拆分阶段 - 基于 proposal、design、brainstorm 进行�
 
 - tasks.md（原子任务清单）
 - 使用的模板来源
-- 告诉用户可以进入 `/stdd:plan` 阶段
+- 告诉用户可以进入 `/stdd-plan` 阶段

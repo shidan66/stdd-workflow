@@ -2,7 +2,7 @@
 description: 编码实现阶段 - 触发 using-git-worktrees 创建隔离空间，触发 tdd 技能执行
 ---
 
-# STDD: 编码实现
+# stdd: 编码实现
 
 ## 目标
 
@@ -10,7 +10,7 @@ description: 编码实现阶段 - 触发 using-git-worktrees 创建隔离空间�
 
 ## 前提
 
-- 已完成 `/stdd:plan` 阶段
+- 已完成 `/stdd-plan` 阶段
 - plan.md 包含执行计划
 
 ## 执行步骤
@@ -51,4 +51,4 @@ description: 编码实现阶段 - 触发 using-git-worktrees 创建隔离空间�
 - worktree 中的代码文件（实现代码）
 - worktree 中的测试文件（测试用例）
 - 更新的 tasks.md（标记完成/失败的任务）
-- 告诉用户可以进入 `/stdd:verify` 阶段
+- 告诉用户可以进入 `/stdd-verify` 阶段

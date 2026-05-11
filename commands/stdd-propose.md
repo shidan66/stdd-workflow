@@ -14,7 +14,7 @@ description: 提案初始化 - 生成符合 OpenSpec 规范的 proposal.md，触
 
 2. **调用 OpenSpec**：运行 `openspec new <feature-name>` 创建 change 目录
 
-3. **检查自定义模板**：检查项目目录下是否存在 `stdd-templates/proposal.md`
+3. **检查自定义模板**：检查项目目录下是否存在 `openspec/schemas/stdd/templates/proposal.md`
    - 如果存在，加载自定义模板
    - 如果不存在，使用 OpenSpec 默认模板
 
@@ -77,4 +77,4 @@ description: 提案初始化 - 生成符合 OpenSpec 规范的 proposal.md，触
 - 创建的 change 目录路径
 - proposal.md 已生成完整内容
 - 使用的模板来源（自定义/OpenSpec 默认）
-- 下一步是 `/stdd:spec` 进行需求规范明确
+- 下一步是 `/stdd-spec` 进行需求规范明确

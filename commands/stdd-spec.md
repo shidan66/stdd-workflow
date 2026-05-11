@@ -10,14 +10,14 @@ description: 需求规范 - 触发 brainstorming 技能，明确需求规格，�
 
 ## 前提
 
-- 已完成 `/stdd:propose` 阶段
+- 已完成 `/stdd-propose` 阶段
 - proposal.md 包含完整的提案内容
 
 ## 执行步骤
 
 1. **读取已有材料**：读取 proposal.md，理解需求提案内容
 
-2. **检查自定义模板**：检查项目目录下是否存在 `stdd-templates/spec.md`
+2. **检查自定义模板**：检查项目目录下是否存在 `openspec/schemas/stdd/templates/spec.md`
    - 如果存在，加载自定义模板
    - 如果不存在，使用 OpenSpec 默认模板
 
@@ -55,4 +55,4 @@ description: 需求规范 - 触发 brainstorming 技能，明确需求规格，�
 - specs/<capability>/spec.md（需求规格）
 - 更新的 brainstorm.md（包含阶段2的问答记录）
 - 使用的模板来源
-- 告诉用户可以进入 `/stdd:design` 阶段
+- 告诉用户可以进入 `/stdd-design` 阶段

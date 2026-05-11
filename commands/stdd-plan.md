@@ -10,12 +10,12 @@ description: 执行计划阶段 - 触发 writing-plans 技能，分析 tasks.md�
 
 ## 前提
 
-- 已完成 `/stdd:tasks` 阶段
+- 已完成 `/stdd-tasks` 阶段
 - tasks.md 包含原子任务清单
 
 ## 执行步骤
 
-1. **检查自定义模板**：检查项目目录下是否存在 `stdd-templates/plan.md`
+1. **检查自定义模板**：检查项目目录下是否存在 `openspec/schemas/stdd/templates/plan.md`
    - 如果存在，加载自定义模板
    - 如果不存在，使用 STDD 默认模板
 
@@ -65,4 +65,4 @@ description: 执行计划阶段 - 触发 writing-plans 技能，分析 tasks.md�
 
 - plan.md（执行计划）
 - 使用的模板来源
-- 告诉用户可以进入 `/stdd:apply` 阶段
+- 告诉用户可以进入 `/stdd-apply` 阶段

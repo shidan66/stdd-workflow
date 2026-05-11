@@ -10,12 +10,12 @@ description: 审查验证阶段 - 触发 verification 技能，执行 OpenSpec v
 
 ## 前提
 
-- 已完成 `/stdd:apply` 阶段
+- 已完成 `/stdd-apply` 阶段
 - 代码和测试已生成
 
 ## 执行步骤
 
-1. **检查自定义模板**：检查项目目录下是否存在 `stdd-templates/verify.md`
+1. **检查自定义模板**：检查项目目录下是否存在 `openspec/schemas/stdd/templates/verify.md`
    - 如果存在，加载自定义模板
    - 如果不存在，使用 STDD 默认模板
 
@@ -55,4 +55,4 @@ description: 审查验证阶段 - 触发 verification 技能，执行 OpenSpec v
 
 - verify.md（验证报告）
 - 使用的模板来源
-- 告诉用户可以进入 `/stdd:archive` 阶段
+- 告诉用户可以进入 `/stdd-archive` 阶段
