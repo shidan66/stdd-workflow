@@ -55,17 +55,18 @@ openspec/changes/<feature>/
 ### 目录结构
 
 ```
-项目目录/openspec/
-└── stdd/
-    └──config.yaml
-    └──template                   (可选)
-        ├── proposal.md         (可选)
-        ├── spec.md             (可选)
-        ├── design.md           (可选)
-        ├── tasks.md            (可选)
-        ├── brainstorm.md       (可选)
-        ├── plan.md             (可选)
-        └── verify.md           (可选)
+项目目录/
+    └──openspec/
+        └── stdd/
+            └──config.yaml
+            └──template                   (可选)
+                ├── proposal.md         (可选)
+                ├── spec.md             (可选)
+                ├── design.md           (可选)
+                ├── tasks.md            (可选)
+                ├── brainstorm.md       (可选)
+                ├── plan.md             (可选)
+                └── verify.md           (可选)
 ```
 
 ### 优先级规则
