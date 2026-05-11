@@ -24,15 +24,15 @@ openspec --version
 https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
 
 ### 3. 复制指令文件和模板文件
-使用git将 `https://github.com/shidan66/stdd-workflow.git` 下载到一个临时目录，路径记为`$STDD_HOME`；
+使用git将 `https://github.com/shidan66/stdd-workflow.git` 下载到一个临时目录，下载后得到的文件夹路径记为`$STDD_HOME`；
 
-**复制命令文件**
+**拷贝命令文件**
 
-将`$STDD_HOME/commands/`下面所有的.md文件复制到当前项目的`.opencode/commands/` 目录下，如果当前项目下没有`.opencode/commands/`则先创建目录再下载。
+将`$STDD_HOME/commands/`下面所有的.md文件拷贝到当前项目的`.opencode/commands/` 目录下，如果当前项目下没有`.opencode/commands/`则先创建目录再拷贝。
 
-**复制模板文件**
+**拷贝模板文件**
 
-将`$STDD_HOME/schemas/`目录下面的子目录和文件复制到项目中的 `openspec/schemas/` 目录下。
+将`$STDD_HOME/schemas/`目录下面的子目录和文件拷贝到项目中的 `openspec/schemas/` 目录下，如果当前项目下没有`openspec/schemas/`则先创建目录再拷贝。
 
 **清理$STDD_HOME目录**
 
