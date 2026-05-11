@@ -12,7 +12,7 @@ description: 提案初始化 - 生成符合 OpenSpec 规范的 proposal.md，触
 
 1. **获取功能名称**：询问用户想要创建的功能名称（英文，用于目录命名）
 
-2. **调用 OpenSpec**：运行 `openspec new <feature-name>` 创建 change 目录
+2. **调用 OpenSpec**：运行 `openspec new change <feature-name>` 创建 change 目录
 
 3. **检查自定义模板**：检查项目目录下是否存在 `openspec/schemas/stdd/templates/proposal.md`
    - 如果存在，加载自定义模板
