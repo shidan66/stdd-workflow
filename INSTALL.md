@@ -1,6 +1,6 @@
 # 安装指南
 
-按照下面安装步骤进行安装；
+按照下面安装步骤进行安装，安装过程尽量使用中文输出提示信息。
 
 ## 安装步骤详解
 
@@ -43,3 +43,4 @@ cp -r stdd-workflow/src/commands/* .opencode/commands/
 修改当前项目中`openspec/config.yaml`，将schema改为stdd
 
 ### 6. 提醒用户退出后重新进入opencode
+使用中文提醒用户退出后重新进入opencode
