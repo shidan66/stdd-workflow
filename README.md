@@ -58,7 +58,7 @@ openspec/changes/<feature>/
 项目目录/openspec/
 └── stdd/
     └──config.yaml
-    └──template                   (可选)
+    └──template                 (可选)
         ├── proposal.md         (可选)
         ├── spec.md             (可选)
         ├── design.md           (可选)
