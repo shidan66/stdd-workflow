@@ -23,7 +23,7 @@ openspec --version
 如果没有，按照官方文档安装：
 https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
 
-### 3. 下载代码仓库文件
+### 3. 复制指令文件和模板文件
 使用git将 `https://github.com/shidan66/stdd-workflow.git` 下载到一个临时目录，路径记为`$STDD_HOME`；
 
 **复制命令文件**
