@@ -50,20 +50,22 @@ openspec/changes/<feature>/
 
 ## 自定义模板
 
-支持在项目目录下创建 `stdd-templates/` 目录自定义各阶段的文件格式。
+支持在项目目录下创建 `openspec/schemas/stdd/` 目录自定义各阶段的文件格式。
 
 ### 目录结构
 
 ```
-项目目录/
-└── stdd-templates/          (可选)
-    ├── proposal.md          (可选)
-    ├── spec.md             (可选)
-    ├── design.md           (可选)
-    ├── tasks.md            (可选)
-    ├── brainstorm.md       (可选)
-    ├── plan.md             (可选)
-    └── verify.md           (可选)
+项目目录/openspec/
+└── stdd/
+    └──config.yaml
+    └──template                   (可选)
+        ├── proposal.md         (可选)
+        ├── spec.md             (可选)
+        ├── design.md           (可选)
+        ├── tasks.md            (可选)
+        ├── brainstorm.md       (可选)
+        ├── plan.md             (可选)
+        └── verify.md           (可选)
 ```
 
 ### 优先级规则

@@ -25,7 +25,7 @@ https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INS
 
 ### 3. 复制命令文件
 
-将 `src/commands/` 目录下的所有 `.md` 文件复制到 `.opencode/commands/` 目录。
+将 `src/commands/` 目录下的所有 `.md` 文件复制到项目中 `.opencode/commands/` 目录下。
 
 复制命令：
 ```bash
@@ -34,7 +34,7 @@ cp -r stdd-workflow/src/commands/* .opencode/commands/
 
 ### 4. 复制模板文件
 
-将本项目的`template/`下的`stdd`目录及其下面的文件复制到项目中的 `openspec/schema/` 目录下。
+将本项目的`schemas/`目录下面的子目录和文件复制到项目中的 `openspec/schemas/` 目录下。
 - 如果原项目中已有对应名字的模板文件，则忽略复制
 - 如果原项目模板目录中没有对应名字的模板文件，则进行复制
 
