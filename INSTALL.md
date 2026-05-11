@@ -33,8 +33,10 @@ https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INS
 **复制模板文件**
 
 将`$STDD_HOME/schemas/`目录下面的子目录和文件复制到项目中的 `openspec/schemas/` 目录下。
+
 **清理$STDD_HOME目录**
-删除$STDD_HOME目录及其下面的所有子目录和文件
+
+删除$STDD_HOME目录及其下面的所有子目录和文件。
 
 ### 4. 修改项目中openspec文件，将stdd作为默认schema
 
