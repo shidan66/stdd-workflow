@@ -19,6 +19,7 @@ description: 任务拆分阶段 - 基于 proposal、design、brainstorm 进行�
 
 1. **读取已有材料**：
    - 读取 proposal.md
+   - 读取 主spec文件以及本次变更的spec文件
    - 读取 design.md
    - 读取 brainstorm.md
 
