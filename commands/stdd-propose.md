@@ -47,7 +47,7 @@ description: 提案初始化 - 生成符合 OpenSpec 规范的 proposal.md，触
    <!-- 影响范围 -->
    ```
 
-7. **检查自定义模板**：检查项目目录下是否存在 `stdd-templates/brainstorm.md`
+7. **检查自定义模板**：检查项目目录下是否存在 `openspec/schemas/stdd/templates/brainstorm.md`
    - 如果存在，加载自定义模板
    - 如果不存在，使用 STDD 默认模板
 
@@ -63,13 +63,6 @@ description: 提案初始化 - 生成符合 OpenSpec 规范的 proposal.md，触
    ## 阶段3: 需求设计
    ```
 
-9. **创建空的 specs 目录**：为后续 spec.md 准备
-
-10. **创建空的 design.md**（检查 stdd-templates/design.md 是否存在）
-
-11. **创建空的 tasks.md**（检查 stdd-templates/tasks.md 是否存在）
-
-12. **创建空的 plan.md**
 
 ## 输出
 

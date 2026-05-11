@@ -19,7 +19,7 @@ description: 执行计划阶段 - 触发 writing-plans 技能，分析 tasks.md�
    - 如果存在，加载自定义模板
    - 如果不存在，使用 STDD 默认模板
 
-2. **触发 writing-plans 技能**：加载并使用 writing-plans 技能
+2. **触发 /superpowers/writing-plans 技能**：加载并使用 writing-plans 技能
 
 3. **读取 tasks.md**：获取任务清单
 

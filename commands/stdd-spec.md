@@ -21,7 +21,7 @@ description: 需求规范 - 触发 brainstorming 技能，明确需求规格，�
    - 如果存在，加载自定义模板
    - 如果不存在，使用 OpenSpec 默认模板
 
-3. **触发 brainstorming 技能**：加载并使用 brainstorming 技能
+3. **触发 /superpowers/brainstorming 技能**：加载并使用 brainstorming 技能
 
 4. **需求规范讨论（阶段2）**：
    - 针对每个 Capability 细化需求

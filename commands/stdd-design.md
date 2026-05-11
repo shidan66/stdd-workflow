@@ -26,7 +26,7 @@ description: 设计阶段 - 触发 brainstorming 技能，基于 proposal 和 sp
    - 如果存在，加载自定义模板
    - 如果不存在，使用 OpenSpec 默认模板
 
-3. **触发 brainstorming 技能**：加载并使用 brainstorming 技能
+3. **触发 /superpowers/brainstorming 技能**：加载并使用 brainstorming 技能
 
 4. **设计方案讨论（阶段3）**：
    - 架构设计（模块划分、接口设计）
@@ -35,7 +35,7 @@ description: 设计阶段 - 触发 brainstorming 技能，基于 proposal 和 sp
    - 数据库 schema（如有需要）
    - 多种方案需要确认时主动提问
 
-5. **生成 design.md**：按照模板填充内容，默认包含：
+5. **生成 design.md**：优先按照模板填充，如果没有模板，默认按照下面内容填充：
    - 设计目标
    - 技术选型及理由
    - 架构图或结构说明

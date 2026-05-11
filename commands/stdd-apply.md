@@ -15,13 +15,13 @@ description: 编码实现阶段 - 触发 using-git-worktrees 创建隔离空间�
 
 ## 执行步骤
 
-1. **触发 using-git-worktrees 技能**：加载并使用 using-git-worktrees 技能
+1. **触发 /superpowers/using-git-worktrees 技能**：加载并使用 using-git-worktrees 技能
    - 在新的 worktree 中执行任务
    - 避免污染主空间的代码
 
 2. **读取 plan.md**：获取执行计划
 
-3. **触发 tdd 技能**：加载并使用 test-driven-development 技能
+3. **触发 /superpowers/test-driven-development 技能**：加载并使用 test-driven-development 技能
 
 4. **按顺序执行任务**：对于每个任务：
    - 标记任务开始

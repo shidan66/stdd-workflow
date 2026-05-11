@@ -31,7 +31,7 @@ description: 任务拆分阶段 - 基于 proposal、design、brainstorm 进行�
    - **独立性**：任务间无依赖或依赖清晰
    - **自我闭环**：每个任务有明确的输入和输出
 
-4. **写入 tasks.md**：按照模板填充内容
+4. **写入 tasks.md**：优先按照模板填充内容，如无自定义模板按openspec默认模板填充
 
    **OpenSpec 默认模板**：
    ```markdown
