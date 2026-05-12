@@ -17,28 +17,24 @@ description: 查看当前工作流状态，检测执行阶段，支持从中断�
 
 | 阶段 | 检测依据 |
 |------|----------|
-| 未开始 | 不存在 proposal.md |
-| stdd-propose | proposal.md 有完整内容，brainstorm.md 阶段1有内容 |
-| stdd-spec | spec.md 存在，brainstorm.md 阶段2有内容 |
-| stdd-design | design.md 有内容，brainstorm.md 阶段3有内容 |
-| stdd-tasks | tasks.md 有内容 |
-| stdd-plan | plan.md 有内容 |
-| stdd-apply | tasks.md 有已完成标记 [x] |
-| stdd-verify | verify.md 存在 |
+| 未开始 | 不存在 brainstorm.md |
+| stdd-explore | brainstorm.md 存在，有 Q&A 记录 |
+| stdd-propose | proposal.md, spec.md, design.md, tasks.md 全部存在 |
+| stdd-plan | plan.md 存在 |
+| stdd-apply | tasks.md 有已完成标记 `[x]` |
+| stdd-verify | 已运行 openspec verify |
 | stdd-archive | change 目录已在 archive 中 |
 
 ### 2. 显示状态
 
 输出当前阶段信息：
 ```
-当前阶段: stdd-spec (需求规范)
+当前阶段: stdd-propose (提案生成)
 
 已完成:
-- stdd-propose ✓ (需求提案)
+- stdd-explore ✓ (需求探索)
 
 待完成:
-- stdd-design
-- stdd-tasks
 - stdd-plan
 - stdd-apply
 - stdd-verify
@@ -51,7 +47,7 @@ description: 查看当前工作流状态，检测执行阶段，支持从中断�
 
 **a) 读取 brainstorm.md 分析已完成的讨论**
 
-遍历 brainstorm.md 的三个阶段（需求提案、需求规范、需求设计），识别：
+识别：
 - 已完成的问题（有 Q 有 A）
 - 已问未答的问题（有 Q 无 A 或 A 不完整）
 - 未讨论的新问题（从上下文推断）
@@ -64,10 +60,9 @@ description: 查看当前工作流状态，检测执行阶段，支持从中断�
 
 **c) 更新 brainstorm.md**
 
-- 每次讨论后立即更新文件
-- 格式：
+格式：
 ```markdown
-## 阶段1: 需求提案
+## 需求讨论
 
 ### Q: [问题]
 A: [回答]
