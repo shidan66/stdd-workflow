@@ -47,7 +47,7 @@ openspec/changes/<feature>/
 ├── design.md          (propose 阶段 - 技术设计)
 ├── tasks.md           (propose 阶段 - 任务清单)
 ├── plan.md            (plan 阶段 - 执行计划)
-└── verify.md          (verify 阶段 - 验证报告，仅 OpenSpec verify 校验)
+└── (verify 阶段 - 无文件产出，仅 OpenSpec verify 校验)
 ```
 
 ## 自定义模板
