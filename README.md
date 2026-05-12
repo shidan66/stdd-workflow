@@ -14,18 +14,18 @@ Fetch and follow instructions from https://github.com/shidan66/stdd-workflow/blo
 
 | 命令 | 说明 | 产出 |
 |------|------|------|
-| `/stdd:status` | 状态查看 | - |
-| `/stdd:explore` | 需求探索 | brainstorm.md |
-| `/stdd:propose` | 提案生成 | proposal.md + spec.md + design.md + tasks.md |
-| `/stdd:plan` | 执行计划 | plan.md |
-| `/stdd:apply` | 编码实现 | 代码（更新 tasks.md） |
-| `/stdd:verify` | 审查验证 | 校验结果（无文件产出） |
-| `/stdd:archive` | 归档 | archive/ |
+| `/stdd-status` | 状态查看 | - |
+| `/stdd-explore` | 需求探索 | brainstorm.md |
+| `/stdd-propose` | 提案生成 | proposal.md + spec.md + design.md + tasks.md |
+| `/stdd-plan` | 执行计划 | plan.md |
+| `/stdd-apply` | 编码实现 | 代码（更新 tasks.md） |
+| `/stdd-verify` | 审查验证 | 校验结果（无文件产出） |
+| `/stdd-archive` | 归档 | archive/ |
 
 ## 工作流阶段
 
 ```
-stdd:explore → stdd:propose → stdd:plan → stdd:apply → stdd:verify → stdd:archive
+stdd-explore → stdd-propose → stdd-plan → stdd-apply → stdd-verify → stdd-archive
 ```
 
 | 阶段 | 说明 | 调用技能 |
