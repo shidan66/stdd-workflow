@@ -29,7 +29,7 @@ description: 设计阶段 - 触发 brainstorming 技能，基于 proposal 和 sp
 
 3. **触发 /superpowers/brainstorming 技能**：加载并使用 brainstorming 技能
 
-4. **设计方案讨论（阶段3）**：
+4. **详细设计方案讨论（阶段3）**：
    - 架构设计（模块划分、接口设计）
    - 数据结构设计
    - API 设计（如有需要）
