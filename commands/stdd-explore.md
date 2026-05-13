@@ -43,14 +43,14 @@ description: 需求探索阶段 - 触发 brainstorming 技能，详细讨论需�
 
 ### 6. 需求讨论
 
-按 brainstorming 技能流程进行：
+按 brainstorming 技能流程进行，目标是要能根据头脑风暴的信息，支撑后续生成openspec规范中的proposal.md/spec.md/design.md/tasks.md这些文件 ：
 - **理解想法**：询问需求背景、目标、约束
 - **探索方案**：提出 2-3 种方案并讨论利弊
 - **逐步验证**：分节呈现设计，确认每部分
 
 ### 7. 更新 brainstorm.md
 
-讨论过程中实时记录 Q&A：
+讨论过程中实时原样记录 Q&A：
 ```markdown
 ### Q: [问题]
 A: [回答]
