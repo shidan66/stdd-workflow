@@ -17,6 +17,8 @@
      仅当 spec 级别行为变化时才列入。每项需要一个 delta spec 文件。
      使用 openspec/specs/ 下既有的 spec 名称。若无 requirement 变化则留空。 -->
 - `<existing-name>`: <变化的 requirement 内容>
+
+
 ## Goals
 <!-- 任何变更必须附带测试用例清单，列出输入、预期输出和边界条件。实现代码在未通过测试之前视为未完成 -->
 
