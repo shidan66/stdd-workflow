@@ -1,58 +1,51 @@
 ---
-description: 审查验证阶段 - 触发 verification 技能，执行 OpenSpec verify + TDD 验证 + 覆盖率检查
+description: 审查验证阶段 - 调用 openspec verify 命令校验变更是否符合 OpenSpec 规范（无文件产出）
 ---
 
 # STDD: 审查验证
 
 ## 目标
 
-验证实现是否满足需求，测试是否通过。
+调用 openspec verify 命令校验变更是否符合 OpenSpec 规范。无文件产出。
 
 ## 前提
 
 - 已完成 `/stdd-apply` 阶段
 - 代码和测试已生成
+- tasks.md 中所有任务标记为已完成
 
 ## 执行步骤
 
-1. **检查自定义模板**：检查项目目录下是否存在 `openspec/schemas/stdd/templates/verify.md`
-   - 如果存在，加载自定义模板
-   - 如果不存在，使用 STDD 默认模板
+### 1. 运行 openspec verify
 
-2. **触发 verification-before-completion 技能**：加载并使用 verification-before-completion 技能
+执行 `openspec verify <change-name>` 检查变更目录：
 
-3. **OpenSpec 验证**：运行 `openspec verify` 检查：
-   - 变更目录结构是否完整
-   - proposal.md 格式是否正确
-   - specs 目录是否合规（如果有）
+- 目录结构是否完整
+- proposal.md 格式是否正确
+- spec.md 是否符合规范
+- design.md 是否符合规范
+- tasks.md 格式是否正确（checkbox 格式）
 
-4. **TDD 验证**：检查测试是否：
-   - 测试全部通过
-   - 测试覆盖了主要功能点
+### 2. 验证测试通过
 
-5. **覆盖率检查**：运行测试覆盖率工具（如有），报告覆盖率
+确保测试全部通过：
+- 运行测试命令
+- 检查是否有测试失败
 
-6. **生成验证报告**：按照模板填充内容
+### 3. 验证覆盖率（可选）
 
-   **STDD 默认模板**：
-   ```markdown
-   # 验证报告
+如果有测试覆盖率工具，运行覆盖率检查。
 
-   ## OpenSpec 验证
-   - [ ] 目录结构完整
-   - [ ] proposal.md 格式正确
-   - [ ] specs 目录合规
+### 4. 输出校验结果
 
-   ## TDD 验证
-   - [ ] 所有测试通过
-   - [ ] 测试覆盖主要功能
-
-   ## 覆盖率
-   - 测试覆盖率: XX%
-   ```
+向用户报告：
+- 校验通过/失败
+- 具体失败项（如有）
+- 建议修复方案（如有）
 
 ## 输出
 
-- verify.md（验证报告）
-- 使用的模板来源
-- 告诉用户可以进入 `/stdd-archive` 阶段
+告诉用户：
+- 校验结果（通过/失败）
+- 失败项详情（如有）
+- 下一步是 `/stdd-archive` 归档（如校验通过）
