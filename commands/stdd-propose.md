@@ -43,7 +43,8 @@ description: 提案生成阶段 - 基于 brainstorm.md 和用户输入生成 Ope
 
 ### 4. 生成 proposal.md
 
-基于 brainstorm.md 中的讨论，提取：
+基于 brainstorm.md 中的讨论，优先按照加载的模板中的格式填充对应内容。
+如无模板，按如下格式填充：
 - **Why**：解决的问题或机会
 - **What Changes**：具体变更内容
 - **Capabilities**：涉及的功能模块
@@ -51,7 +52,8 @@ description: 提案生成阶段 - 基于 brainstorm.md 和用户输入生成 Ope
 
 ### 5. 生成 spec.md
 
-基于 brainstorm.md 中的详细讨论，生成完整的需求规格：
+基于 brainstorm.md 中的详细讨论，生成完整的需求规格，优先按照加载的模板中的格式填充对应内容。
+如无模板，按如下格式：
 - **ADDED Requirements**：新增需求（每条 requirement 包含完整描述和 scenarios）
 - **MODIFIED Requirements**：变更需求（如有）
 - **REMOVED Requirements**：移除需求（如有）
@@ -63,7 +65,8 @@ description: 提案生成阶段 - 基于 brainstorm.md 和用户输入生成 Ope
 
 ### 6. 生成 design.md
 
-基于 brainstorm.md 中的设计讨论，生成技术方案：
+基于 brainstorm.md 中的设计讨论，生成技术方案，优先按照加载的模板中的格式填充内容。
+如无模板，按如下：
 - **Context**：背景和约束
 - **Decisions**：技术选型及理由（备选方案对比）
 - **数据模型**：相关数据模型
@@ -73,7 +76,8 @@ description: 提案生成阶段 - 基于 brainstorm.md 和用户输入生成 Ope
 
 ### 7. 生成 tasks.md
 
-基于 proposal.md、spec.md、design.md，拆分任务清单：
+基于 proposal.md、spec.md、design.md，优先按照加载的模板文件tasks.md中的格式拆分任务清单。
+需要注意：
 - 任务必须使用 `- [ ]` checkbox 格式
 - 相关任务归入带编号的 `##` 分组
 - 每个任务原子化，可独立完成
