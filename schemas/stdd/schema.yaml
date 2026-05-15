@@ -10,21 +10,6 @@ stages:
     template: brainstorm.md
     instruction: >
       通过 brainstorming 技能详细讨论需求。
-
-      尽可能全面地询问不明确的问题：
-      - 理解想法：询问需求背景、目标、约束
-      - 探索方案：提出 2-3 种方案并讨论利弊
-      - 逐步验证：分节呈现设计，确认每部分
-      - 不能瞎猜：不确定的地方必须要询问得到明确的回复，不能瞎猜想当然
-
-      讨论过程中实时记录 Q&A 到 brainstorm.md：
-      ```markdown
-      ### Q: [问题]
-      A: [回答]
-
-      ### Q: [问题]
-      <!-- 待回答 -->
-      ```
     requires: []
 
   - id: propose
@@ -32,40 +17,7 @@ stages:
     generates: proposal.md, specs/**/spec.md, design.md, tasks.md
     description: 基于 brainstorm.md 和用户输入，一次性生成符合 OpenSpec 规范的 4 个文档
     instruction: >
-      基于 brainstorm.md 中的讨论，一次性生成 4 个 OpenSpec 文档。
-
-      ## 生成 proposal.md
-      提取 brainstorm.md 中的：
-      - **Why**：解决的问题或机会
-      - **What Changes**：具体变更内容
-      - **Capabilities**：涉及的功能模块
-      - **Impact**：影响范围
-
-      ## 生成 specs/**/spec.md
-      基于 brainstorm.md 中的详细讨论：
-      - **ADDED Requirements**：新增需求（每条包含完整描述和 scenarios）
-      - **MODIFIED Requirements**：变更需求（如有）
-      - **REMOVED Requirements**：移除需求（如有）
-
-      格式要求：
-      - 每个 scenario 使用 `####` 标题（4 个井号）
-      - 使用 WHEN/THEN 格式
-      - SHALL/MUST 描述规范性要求
-
-      ## 生成 design.md
-      基于设计讨论：
-      - **Context**：背景和约束
-      - **Decisions**：技术选型及理由
-      - **数据模型**：相关数据模型
-      - **业务流程**：核心业务流程（如有）
-      - **Risks / Trade-offs**：已知风险
-
-      ## 生成 tasks.md
-      基于以上文档拆分任务：
-      - 任务使用 `- [ ]` checkbox 格式
-      - 相关任务归入 `##` 分组
-      - 每个任务原子化，可独立完成
-      - 按依赖顺序排列
+      基于 brainstorm.md 中的讨论，一次性生成4个符合规范的 OpenSpec 文档。
     requires:
       - explore
 
@@ -75,32 +27,14 @@ stages:
     description: 调用 writing-plans 技能，基于 tasks.md 生成执行计划
     instruction: >
       调用 writing-plans 技能生成执行计划。
-
-      读取 tasks.md，分析任务依赖：
-      - 任务依赖关系
-      - 可并行执行的任务
-      - 串行执行的任务
-      - 关键路径
-
-      按照 writing-plans 规范生成 plan.md，包含：
-      - 任务依赖图
-      - 执行顺序（阶段划分）
-      - 每个任务的具体步骤（测试→实现→重构）
     requires:
       - propose
 
   - id: apply
     name: 编码实现
-    description: 调用 subagent-driven-development 技能，按 plan.md 执行任务
+    description: 执行变更，按 plan.md 执行任务
     instruction: >
       调用 subagent-driven-development 技能执行任务。
-
-      对于每个任务：
-      1. 标记任务开始（`- [ ]` → `- [/]`）
-      2. 按 TDD 流程执行（测试→实现→重构）
-      3. 标记任务完成（`- [/]` → `- [x]`）
-      4. 实时更新 tasks.md
-
       任务依赖处理：
       - 独立任务失败后继续执行其他独立任务
       - 依赖任务失败后阻塞下游任务
@@ -112,15 +46,7 @@ stages:
     description: 调用 openspec verify 命令校验变更是否符合 OpenSpec 规范
     instruction: >
       运行 `openspec verify <change-name>` 校验变更。
-
-      检查项：
-      - 目录结构是否完整
-      - proposal.md 格式是否正确
-      - spec.md 是否符合规范
-      - design.md 是否符合规范
-      - tasks.md 格式是否正确
-
-      向用户报告校验结果（通过/失败）。
+      确保全量单元测试运行通过
     requires:
       - apply
 
@@ -129,9 +55,5 @@ stages:
     description: 调用 openspec archive 命令归档变更
     instruction: >
       执行 `openspec archive <change-name>` 归档变更。
-
-      自动完成：
-      - 将 specs/ 中的增量 spec 合并到 openspec/specs/
-      - 将 change 目录移动到 archive/
     requires:
       - verify
