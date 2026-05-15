@@ -24,7 +24,7 @@ description: 编码实现阶段 - 调用 subagent-driven-development 技能，�
 ### 2. 按阶段执行任务
 
 注意：
-- 任务数量超过2个，必须按照subagent-driven-development方式执行任务
+- 必须按照subagent-driven-development方式执行任务
 - 对于每个任务，必须严格按照TDD规范执行，禁止先写生产代码
 - 单元测试要尽可能完善
 
