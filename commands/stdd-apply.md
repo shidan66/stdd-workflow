@@ -1,5 +1,5 @@
 ---
-description: 编码实现阶段 - 调用 subagent-driven-development 技能，按照 plan.md 调用test-driven-development 执行任务并更新 tasks.md
+description: 编码实现阶段 - 调用 subagent-driven-development 技能，按照 plan.md 执行任务并更新 tasks.md
 ---
 
 # STDD: 编码实现
@@ -11,7 +11,7 @@ description: 编码实现阶段 - 调用 subagent-driven-development 技能，�
 
 ## 前提
 
-- 已完成 `/stdd-plan` 阶段git
+- 已完成 `/stdd-plan` 阶段
 - plan.md 包含执行计划
 - tasks.md 包含任务清单
 
@@ -23,10 +23,8 @@ description: 编码实现阶段 - 调用 subagent-driven-development 技能，�
 
 ### 2. 按照subagent-driven-development方式 和 test-driven-development规范执行任务
 
-注意：
-- 必须严格按照subagent-driven-development方式执行任务
-- 对于每个任务，必须严格按照TDD规范执行，禁止先写生产代码，输出RED-GREEN-REACTOR步骤
-- 单元测试要尽可能完善
+必须严格按照subagent-driven-development方式执行任务，任何生产代码变更，如果子代理没有展示 RED→GREEN 的过程，你不得接受提交；
+单元测试要尽可能完善
 
 ### 3. 更新 tasks.md
 
