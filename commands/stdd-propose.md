@@ -11,6 +11,7 @@ description: 提案生成阶段 - 基于 brainstorm.md 和用户输入生成 Ope
 - spec.md（需求规格）
 - design.md（技术设计）
 - tasks.md（任务清单）
+注意：此阶段的输出内容应尽可能使用中文（专业术语或代码等除外）
 
 ## 前提
 
@@ -20,17 +21,12 @@ description: 提案生成阶段 - 基于 brainstorm.md 和用户输入生成 Ope
 
 ## 执行步骤
 
-### 1. 获取功能名称
+### 1. 确认功能名称
 
-确认用户输入的功能名称（英文，用于目录命名）。
+根据前面brainstorm阶段的信息，或者当前阶段的输入信息，自动生成本次openspec change的候选名称（英文，用于目录命名），让用户确认且支持用户自己输入。
 
-### 2. 读取已有材料
 
-- 读取 brainstorm.md（需求讨论记录）
-- 分析 Q&A 中已明确的需求
-- 识别待确认但可以推断的部分
-
-### 3. 检查自定义模板
+### 2. 检查自定义模板
 
 依次检查项目目录下是否存在对应的自定义模板：
 
@@ -39,66 +35,23 @@ description: 提案生成阶段 - 基于 brainstorm.md 和用户输入生成 Ope
 - `openspec/schemas/stdd/templates/design.md`
 - `openspec/schemas/stdd/templates/tasks.md`
 
-如果存在，加载自定义模板；否则使用 OpenSpec/STDD 默认模板。
+如果存在，加载自定义模板；否则使用 OpenSpec 默认模板。
 
-### 4. 生成 proposal.md
+### 3. 生成 proposal.md
 
-基于 brainstorm.md 中的讨论，优先按照加载的模板中的格式填充对应内容。
-如无模板，按如下格式填充：
-- **Why**：解决的问题或机会
-- **What Changes**：具体变更内容
-- **Capabilities**：涉及的功能模块
-- **Impact**：影响范围
+基于 brainstorm.md 中的讨论，按proposal.md模板生成符合openspec规范的proposal.md文件
 
-### 5. 生成 spec.md
-从 proposal.md 的 Capabilities 中提取所有 capability 名称并分别生成对应文件：
-- **New Capabilities** 中的每一项，创建 specs/<capability-name>/spec.md，内容使用 ## ADDED Requirements
-- **Modified Capabilities** 中的每一项，创建 specs/<capability-name>/spec.md，内容使用 ## MODIFIED Requirements
-- **Removed Capabilities** 中的每一项（如有），创建 specs/<capability-name>/spec.md，内容使用 ## REMOVED Requirements 
-注意：文件必须放在 specs/ 子目录下，不是 change 根目录。 capability-name 使用 kebab-case 格式（如test-capability-name）。
-路径示例： openspec/changes/<change-name>/specs/test-capability-name/spec.md
-基于 brainstorm.md 中的详细讨论，生成完整的需求规格，优先按照加载的模板中的格式填充对应内容。
-如无模板，按如下格式：
-- **ADDED Requirements**：新增需求（每条 requirement 包含完整描述和 scenarios）
-- **MODIFIED Requirements**：变更需求（如有）
-- **REMOVED Requirements**：移除需求（如有）
+### 4. 生成 spec.md
+基于前面已有的信息，按spec.md模板生成符合openspec规范的spec.md文件
+- 特别注意：spec.md文件的路径要符合openspec规范
 
-格式要求：
-- 每个 scenario 使用 `####` 标题（4 个井号）
-- 使用 WHEN/THEN 格式描述场景
-- SHALL/MUST 描述规范性要求
+### 5. 生成 design.md
+基于前面已有的信息，按design.md模板生成符合openspec规范的design.md文件
 
-### 6. 生成 design.md
+### 6. 生成 tasks.md
 
-基于 brainstorm.md 中的设计讨论，生成技术方案，优先按照加载的模板中的格式填充内容。
-如无模板，按如下：
-- **Context**：背景和约束
-- **Decisions**：技术选型及理由（备选方案对比）
-- **数据模型**：相关数据模型
-- **业务流程**：核心业务流程（如有）
-- **Risks / Trade-offs**：已知风险
-- **Migration Plan**：迁移计划（如适用）
+基于前面已有的信息，按tasks.md模板生成符合openspec规范的tasks.md文件
 
-### 7. 生成 tasks.md
-
-基于 proposal.md、spec.md、design.md，优先按照加载的模板文件tasks.md中的格式拆分任务清单。
-需要注意：
-- 任务必须使用 `- [ ]` checkbox 格式
-- 相关任务归入带编号的 `##` 分组
-- 每个任务原子化，可独立完成
-- 按依赖顺序排列
-
-### 8. 更新 brainstorm.md
-
-在 brainstorm.md 末尾标注文档生成状态：
-```markdown
-## 文档生成状态
-
-- [x] proposal.md - 已生成
-- [x] spec.md - 已生成
-- [x] design.md - 已生成
-- [x] tasks.md - 已生成
-```
 
 ## 输出
 
