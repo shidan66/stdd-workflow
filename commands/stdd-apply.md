@@ -1,17 +1,17 @@
 ---
-description: 编码实现阶段 - 调用 subagent-driven-development 技能，按照 plan.md 执行任务并更新 tasks.md
+description: 编码实现阶段 - 调用 subagent-driven-development 技能，按照 plan.md 调用test-driven-development 执行任务并更新 tasks.md
 ---
 
 # STDD: 编码实现
 
 ## 目标
 
-调用 subagent-driven-development 技能，按照 plan.md 执行任务，完成后更新 tasks.md 标记已完成的任务。
+调用 subagent-driven-development 技能，根据 plan.md 文件，调用test-driven-development 执行任务（必须严格遵循TDD规范），完成后更新 tasks.md 标记已完成的任务。
 注意：此阶段的输出内容应尽可能使用中文（专业术语或代码等除外）
 
 ## 前提
 
-- 已完成 `/stdd-plan` 阶段
+- 已完成 `/stdd-plan` 阶段git
 - plan.md 包含执行计划
 - tasks.md 包含任务清单
 
@@ -21,11 +21,11 @@ description: 编码实现阶段 - 调用 subagent-driven-development 技能，�
 
 获取执行计划，分析任务依赖关系确定执行顺序，并按照顺序格式化输出清单
 
-### 2. 按阶段执行任务
+### 2. 按照subagent-driven-development方式 和 test-driven-development规范执行任务
 
 注意：
-- 必须按照subagent-driven-development方式执行任务
-- 对于每个任务，必须严格按照TDD规范执行，禁止先写生产代码
+- 必须严格按照subagent-driven-development方式执行任务
+- 对于每个任务，必须严格按照TDD规范执行，禁止先写生产代码，输出RED-GREEN-REACTOR步骤
 - 单元测试要尽可能完善
 
 ### 3. 更新 tasks.md
@@ -38,4 +38,5 @@ description: 编码实现阶段 - 调用 subagent-driven-development 技能，�
 告诉用户：
 - 完成的任务数量
 - 失败的任务（如有）
+- 本次变更的单元测试覆盖率（如有）
 - 下一步是 `/stdd-verify` 验证实现
