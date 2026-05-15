@@ -19,23 +19,14 @@ description: 需求探索阶段 - 触发 brainstorming 技能，详细讨论需�
 
 ### 2. 触发 brainstorming 技能
 
-加载并使用 /superpowers/brainstorming 技能进行需求讨论。
-
-### 3. 需求讨论
-
 按 brainstorming 技能流程进行，尽可能详细的讨论，目标是要能根据头脑风暴的信息，支撑后续生成openspec规范中的proposal.md/spec.md/design.md/tasks.md这些文件
-注意：不确定的地方必须要询问得到明确的回复，不能想当然的瞎猜
+注意：
+- 不确定的地方必须要询问得到明确的回复，不能想当然的瞎猜
+- 只能提问需求相关的问题，提问完成后直接结束brainstorming，不要引导用户立即进入design或者其他阶段
 
-### 4. 更新 brainstorm.md
+### 3. 更新 brainstorm.md
 
-讨论过程中实时原样记录 Q&A：
-```markdown
-### Q: [问题]
-A: [回答]
-
-### Q: [问题]
-<!-- 待回答 -->
-```
+将讨论的问题原始信息写入brainstrom.md
 
 ## 输出
 
