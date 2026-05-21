@@ -17,14 +17,22 @@ description: 编码实现阶段 - 调用 subagent-driven-development 技能，�
 
 ## 执行步骤
 
+### 0. 概念对齐，明确TDD规范内容
+1. 写测试用例（引用尚不存在的类/方法），创建最小桩代码（空类、返回 null/default 的方法）→ 让测试能 **编译通过**
+2. 运行测试 → 测试 **执行失败**（断言不通过）
+3. 实现业务逻辑
+4. 运行测试 → 测试通过 →  🟢 GREEN
+5. 重构
+
 ### 1. 读取 plan.md
 
-获取执行计划，分析任务依赖关系确定执行顺序，并按照顺序格式化输出清单
+获取执行计划，并输出格式化清单
 
 ### 2. 按照subagent-driven-development方式 和 test-driven-development规范执行任务
 
-必须严格按照subagent-driven-development方式执行任务，任何生产代码变更，如果子代理没有展示 RED→GREEN 的过程，你不得接受提交；
-单元测试要尽可能完善
+必须严格按照/superpowers/subagent-driven-development方式执行任务
+告诉所有子代理：每个任务的执行必须严格遵守TDD规范；如果子代理没有展示 RED→GREEN→REFACTOR 的过程，你不得接受提交；
+
 
 ### 3. 更新 tasks.md
 

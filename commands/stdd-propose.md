@@ -42,8 +42,22 @@ description: 提案生成阶段 - 基于 brainstorm.md 和用户输入生成 Ope
 基于 brainstorm.md 中的讨论，按proposal.md模板生成符合openspec规范的proposal.md文件
 
 ### 4. 生成 spec.md
-基于前面已有的信息，按spec.md模板生成符合openspec规范的spec.md文件
-- 特别注意：spec.md文件的路径要符合openspec规范
+从 proposal.md 的 Capabilities 中提取所有 capability 名称并分别生成对应文件：
+- **New Capabilities** 中的每一项，创建 specs/<capability-name>/spec.md，内容使用 ## ADDED Requirements
+- **Modified Capabilities** 中的每一项，创建 specs/<capability-name>/spec.md，内容使用 ## MODIFIED Requirements
+- **Removed Capabilities** 中的每一项（如有），创建 specs/<capability-name>/spec.md，内容使用 ## REMOVED Requirements
+注意：文件必须放在 specs/ 子目录下，不是 change 根目录。 capability-name 使用 kebab-case 格式（如test-capability-name）。
+路径示例： openspec/changes/<change-name>/specs/test-capability-name/spec.md
+基于 brainstorm.md 中的详细讨论，生成完整的需求规格，优先按照加载的模板中的格式填充对应内容。
+如无模板，按如下格式：
+- **ADDED Requirements**：新增需求（每条 requirement 包含完整描述和 scenarios）
+- **MODIFIED Requirements**：变更需求（如有）
+- **REMOVED Requirements**：移除需求（如有）
+
+格式要求：
+- 每个 scenario 使用 `####` 标题（4 个井号）
+- 使用 WHEN/THEN 格式描述场景
+- 正文和标题都要使用 SHALL/MUST 描述规范性要求
 
 ### 5. 生成 design.md
 基于前面已有的信息，按design.md模板生成符合openspec规范的design.md文件

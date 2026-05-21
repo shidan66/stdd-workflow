@@ -12,18 +12,18 @@ description: 查看当前工作流状态，检测执行阶段，支持从中断�
 ## 执行步骤
 
 ### 1. 检测当前阶段
+**重要：** 每次操作必须重新检查 change 目录下实际的文件，不能未检查凭记忆回复
+重新检查 change 目录下的文件，确定工作流阶段：
 
-检查 change 目录下的文件，确定工作流阶段：
-
-| 阶段 | 检测依据 |
-|------|----------|
-| 未开始 | 不存在 brainstorm.md |
-| stdd-explore | brainstorm.md 存在，有 Q&A 记录 |
-| stdd-propose | proposal.md, spec.md, design.md, tasks.md 全部存在 |
-| stdd-plan | plan.md 存在 |
-| stdd-apply | tasks.md 有已完成标记 `[x]` |
-| stdd-verify | 已运行 openspec verify |
-| stdd-archive | change 目录已在 archive 中 |
+| 阶段 | 检测依据                                                               |
+|------|--------------------------------------------------------------------|
+| 未开始 | 不存在 brainstorm.md                                                  |
+| stdd-explore | brainstorm.md 存在，有 Q&A 记录                                          |
+| stdd-propose | proposal.md, <change name>/specs/spec.md, design.md, tasks.md 全部存在 |
+| stdd-plan | plan.md 存在                                                         |
+| stdd-apply | tasks.md 有已完成标记 `[x]`                                              |
+| stdd-verify | 已运行 openspec verify                                                |
+| stdd-archive | change 目录已在 archive 中                                              |
 
 ### 2. 显示状态
 
