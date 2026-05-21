@@ -1,59 +1,224 @@
 name: stdd
-version: 2
-description: STDD工作流 v2 - 简化阶段，整合 OpenSpec 和 Superpowers
+version: 3
+description: STDD工作流 v3 - 简化阶段，整合 OpenSpec 和 Superpowers
 
-stages:
-  - id: explore
-    name: 需求探索
+artifacts:
+  - id: brainstorm
     generates: brainstorm.md
-    description: 使用 brainstorming 技能详细讨论需求，Q&A后记录追加保存进 brainstorm.md
+    description: 基于本次变更中待确认的事项进行提问，确保需求点已经澄清
     template: brainstorm.md
     instruction: >
-      通过 brainstorming 技能详细讨论需求。
-    requires: []
-
-  - id: propose
-    name: 提案生成
-    generates: proposal.md, specs/**/spec.md, design.md, tasks.md
-    description: 基于 brainstorm.md 和用户输入，一次性生成符合 OpenSpec 规范的 4 个文档
+      调用`/superpowers/brainstorming`技能，对待确认事项进行澄清，要能根据此阶段获取到的信息，支撑后续生成openspec规范中的proposal.md/spec.md/design.md/tasks.md这些文件
+    requires: [ ]
+  - id: proposal
+    generates: proposal.md
+    description: 阐述本次变更动机的初始提案文档
+    template: proposal.md
     instruction: >
-      基于 brainstorm.md 中的讨论，一次性生成4个符合规范的 OpenSpec 文档。
-    requires:
-      - explore
+      创建提案文档，明确说明「为什么」需要本次变更。
 
+
+      章节要求：
+
+      - **Why**：用 1-2 句话说明所解决的问题或机会。要解决什么问题？为什么是现在？
+
+      - **What Changes**：以条目形式列出变更内容，明确说明新增能力、修改点或移除项。
+      破坏性变更必须用 **BREAKING** 标记。
+
+      - **Capabilities**：标识将要新建或修改的 spec：
+        - **New Capabilities**：列出新引入的能力，每一项会生成 `specs/<name>/spec.md`，使用 kebab-case 命名（例如 `user-auth`、`data-export`）。
+        - **Modified Capabilities**：列出 REQUIREMENTS 发生变化的既有能力。仅当 spec 级别行为变化时才列入（实现细节调整不算）。每项需要一个 delta spec 文件。请先在 `openspec/specs/` 中确认既有 spec 名称。若无 requirement 变化则留空。
+      - **Impact**：受影响的代码、API、依赖或系统。
+
+
+      重要：Capabilities 章节是关键，它在 proposal 与 specs 阶段之间建立契约。
+
+      填写前请先调研既有 specs。这里列出的每一个 capability 都需要对应的 spec 文件。
+
+
+      整体保持精简（1-2 页）。聚焦「为什么」而非「怎么做」——
+
+      实现细节属于 design.md 的范畴。
+
+
+      这是一切的基础，specs、design、tasks 都建立在它之上。
+    requires: [ brainstorm ]
+  - id: specs
+    generates: specs/**/*.md
+    description: 本次变更对应的详细规范文档
+    template: spec.md
+    instruction: >
+      创建规范文件，定义系统「应当做什么」。
+
+
+      为 proposal 的 Capabilities 章节中列出的每一个 capability 创建一个 spec 文件。
+
+      - 新增 capability：使用 proposal 中给定的 kebab-case 名称
+      （路径为 specs/<capability>/spec.md）。
+
+      - 修改既有 capability：复用 openspec/specs/<capability>/ 下既有的 spec 目录名，
+      在 specs/<capability>/spec.md 创建 delta spec。
+
+
+      Delta 操作（使用 ## 标题）：
+
+      - **ADDED Requirements**：新增的能力
+
+      - **MODIFIED Requirements**：变更的行为 —— 必须包含完整更新后的内容
+
+      - **REMOVED Requirements**：废弃的功能 —— 必须包含 **Reason**
+      与 **Migration**
+
+      - **RENAMED Requirements**：仅名称变更 —— 使用 FROM:/TO: 格式
+
+
+      格式约束：
+
+      - 每条 requirement：`### Requirement: <名称>`，后跟描述
+
+      - 规范性要求统一使用 SHALL/MUST（避免 should/may）
+
+      - 每个 scenario：`#### Scenario: <名称>`，使用 WHEN/THEN 格式
+
+      - **关键**：Scenario 必须使用恰好 4 个井号（`####`）。
+      使用 3 个井号或改用条目都会被静默忽略。
+
+      - 每条 requirement 至少包含一个 scenario。
+
+
+      MODIFIED requirement 的标准流程：
+
+      1. 在 openspec/specs/<capability>/spec.md 中定位既有 requirement
+
+      2. 复制完整的 requirement 块（从 `### Requirement:` 到全部 scenarios）
+
+      3. 粘贴到 `## MODIFIED Requirements` 之下，编辑以反映新行为
+
+      4. 确保标题文本完全一致（忽略空白差异）
+
+
+      常见陷阱：以 MODIFIED 形式只贴出部分内容，归档时会丢失细节。
+
+      若仅是新增关注点而不改变既有行为，请改用 ADDED。
+
+
+      示例：
+
+      ```
+
+      ## ADDED Requirements
+
+
+      ### Requirement: User can export data
+
+      The system SHALL allow users to export their data in CSV format.
+
+
+      #### Scenario: Successful export
+
+      - **WHEN** user clicks "Export" button
+
+      - **THEN** system downloads a CSV file with all user data
+
+
+      ## REMOVED Requirements
+
+
+      ### Requirement: Legacy export
+
+      **Reason**: Replaced by new export system
+
+      **Migration**: Use new export endpoint at /api/v2/export
+
+      ```
+
+
+      Specs 必须可被验证 —— 每个 scenario 都是潜在的测试用例。
+    requires:
+      - proposal
+  - id: design
+    generates: design.md
+    description: 包含实现细节的技术设计文档
+    template: design.md
+    instruction: >
+      创建设计文档，说明「如何」实现本次变更。
+      聚焦于架构与方法，而不是逐行实现。
+      动机引用 proposal，需求引用 specs。
+      好的设计文档解释技术决策背后的「为什么」。
+    requires:
+      - proposal
+      - specs
+      - brainstorm
+  - id: tasks
+    generates: tasks.md
+    description: 可追踪的实现任务清单
+    template: tasks.md
+    instruction: >
+      创建任务清单，将实现工作拆解为可执行项。
+
+
+      **重要：必须严格遵循下方模板的格式。** apply 阶段会解析
+
+      checkbox 来跟踪进度。未使用 `- [ ]` 的任务不会被跟踪。
+
+
+      指南：
+
+      - 相关任务归入带编号的 ## 标题分组
+
+      - 每个任务必须是 checkbox：`- [ ] X.Y 任务描述`
+
+      - 任务粒度应足够小，可在一次会话内完成
+
+      - 按依赖顺序排列（先做什么？）
+
+
+      示例：
+
+      ```
+
+      ## 1. Setup
+
+
+      - [ ] 1.1 Create new module structure
+
+      - [ ] 1.2 Add dependencies to package.json
+
+
+      ## 2. Core Implementation
+
+
+      - [ ] 2.1 Implement data export function
+
+      - [ ] 2.2 Add CSV formatting utilities
+
+      ```
+
+
+      需求引用 specs，方法引用 design。
+
+      每个任务都应可验证 —— 你能明确判断它是否完成。
+    requires:
+      - specs
+      - design
   - id: plan
     name: 执行计划
     generates: plan.md
     description: 调用 writing-plans 技能，基于 tasks.md 生成执行计划
-    instruction: >
-      调用 writing-plans 技能生成执行计划。
+    template: plan.md
+    instruction: |
+      结合tasks.md文件以及brainstorm.md文件内容，调用 /superpowers/writing-plans 技能生成执行计划plan.md文件。
+      plan.md文件中的任务应该按照TDD规范来安排顺序，必须先写完测试代码后才能写生产代码。
+      plan.md文件中内容尽量使用中文。
     requires:
-      - propose
+      - tasks
 
-  - id: apply
-    name: 编码实现
-    description: 执行变更，按 plan.md 执行任务
-    instruction: >
-      调用 subagent-driven-development 技能执行任务。
-      任务依赖处理：
-      - 独立任务失败后继续执行其他独立任务
-      - 依赖任务失败后阻塞下游任务
-    requires:
-      - plan
-
-  - id: verify
-    name: 审查验证
-    description: 调用 openspec verify 命令校验变更是否符合 OpenSpec 规范
-    instruction: >
-      运行 `openspec verify <change-name>` 校验变更。
-      确保全量单元测试运行通过
-    requires:
-      - apply
-
-  - id: archive
-    name: 归档
-    description: 调用 openspec archive 命令归档变更
-    instruction: >
-      执行 `openspec archive <change-name>` 归档变更。
-    requires:
-      - verify
+apply:
+  requires: [plan]
+  tracks: plan.md
+  instruction: |
+      调用 /superpowers/subagent-driven-development，以每个任务分配全新子代理的方式执行 plan.md 中的任务。
+      告诉执行任务的子代理：
+      - 在本变更目录下读取 plan.md 获取微任务
+      - 粗粒度任务完成后更新 tasks.md 中的勾选框
+      - 每个任务遵循 RED-GREEN-REFACTOR。在出现失败测试之前编写的实现代码将被删除
