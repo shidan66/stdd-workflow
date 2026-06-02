@@ -23,7 +23,8 @@ description: 执行计划阶段 - 调用 writing-plans 技能，基于 tasks.md 
 5. 重构
 
 ### 1. 调用 writing-plans 生成plan.md文件
-根据task.md文件内容，调用 /superpowers/writing-plans 技能, 严格按照TDD规范生成任务执行计划并写入plan.md文件
+根据task.md文件内容，参照模板`openspec/schemas/stdd/templates/plan.md`的格式，调用 /superpowers/writing-plans 技能, 
+严格按照TDD规范生成任务执行计划并写入`openspec/changes/<name>/plan.md`文件
 **注意：**必须确保所有任务都按照TDD规范步骤拆分 ，且所有任务尽量使用中文描述
 
 ### 2. 检查plan.md中是否按照TDD规范拆分执行计划
